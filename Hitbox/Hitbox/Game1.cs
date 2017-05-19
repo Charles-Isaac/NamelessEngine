@@ -40,11 +40,11 @@ namespace Hitbox
             m_GenericHitbox =
                 new Engine.Hitbox(new LineSegment[]
                 {
-                    new LineSegment(new Vector2(16, 0), new Vector2(16, 32)),
-                    new LineSegment(new Vector2(4, 16), new Vector2(28, 16))
+                    new LineSegment(new Vector2(32, -3), new Vector2(32, 64)),
+                    new LineSegment(new Vector2(10, 32), new Vector2(54, 32))
                 });
             
-            EntityA = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 100), new Vector2(32,32), m_GenericHitbox);
+            EntityA = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 100), new Vector2(32,32), m_GenericHitbox,0,10000,false);
             EntityB = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 300), new Vector2(32,32), m_GenericHitbox);
         }
 
@@ -106,9 +106,33 @@ namespace Hitbox
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            m_DemonstrationLineHitbox = new LineSegment(new Vector2(0,0),new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y));
-            // TODO: Add your update logic here
 
+
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                m_DemonstrationLineHitbox.Start += new Vector2(0, -0.3f * gameTime.ElapsedGameTime.Milliseconds);
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                m_DemonstrationLineHitbox.Start += new Vector2(-0.2f * gameTime.ElapsedGameTime.Milliseconds, 0);
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                m_DemonstrationLineHitbox.Start += new Vector2(0, 0.3f * gameTime.ElapsedGameTime.Milliseconds);
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                m_DemonstrationLineHitbox.Start += new Vector2(0.2f * gameTime.ElapsedGameTime.Milliseconds, 0);
+            }
+
+            m_DemonstrationLineHitbox = new LineSegment(m_DemonstrationLineHitbox.Start,
+                new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y));
+            // TODO: Add your update logic here
+            EntityA.Update(gameTime);
+            EntityB.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -122,8 +146,14 @@ namespace Hitbox
             spriteBatch.Begin();
             // TODO: Add your drawing code here
 
-            spriteBatch.Draw(EntityA.CurrentTexture(), EntityA.Position, new Rectangle(0, 0, (int)EntityA.Size.X, (int)EntityA.Size.Y), EntityA.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : Color.White);
-            spriteBatch.Draw(EntityB.CurrentTexture(), EntityB.Position, new Rectangle(0, 0, (int)EntityB.Size.X, (int)EntityB.Size.Y), EntityB.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : Color.White);
+            spriteBatch.Draw(EntityA.CurrentTexture(), EntityA.Position,
+                new Rectangle(0, 0, (int) EntityA.Size.X, (int) EntityA.Size.Y),
+                EntityA.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : Color.White, 0, new Vector2(), 2,
+                SpriteEffects.None, 0f);
+            spriteBatch.Draw(EntityB.CurrentTexture(), EntityB.Position,
+                new Rectangle(0, 0, (int) EntityB.Size.X, (int) EntityB.Size.Y),
+                EntityB.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : Color.White, 0, new Vector2(), 2,
+                SpriteEffects.None, 0f);
             DrawLine(spriteBatch,m_DemonstrationLineHitbox,Color.Green,3);
             base.Draw(gameTime);
             spriteBatch.End();

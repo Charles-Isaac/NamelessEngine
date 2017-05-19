@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier3.png</SourceFile>
-  <SourceTime>2017-04-16T22:20:21.3537051-04:00</SourceTime>
-  <DestFile>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/bin/DesktopGL/Texture/Soldier3.xnb</DestFile>
-  <DestTime>2017-05-18T22:07:58.1722931-04:00</DestTime>
+  <SourceFile>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/NamelessEngine/Hitbox/Hitbox/Content/Texture/Soldier3.png</SourceFile>
+  <SourceTime>2017-05-18T23:25:26.882839-04:00</SourceTime>
+  <DestFile>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/NamelessEngine/Hitbox/Hitbox/Content/bin/DesktopGL/Texture/Soldier3.xnb</DestFile>
+  <DestTime>2017-05-18T23:39:14.0042009-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T02:36:08-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

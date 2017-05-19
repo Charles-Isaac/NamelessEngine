@@ -38,8 +38,8 @@ namespace Hitbox.Engine
                 return
                     m_EntityTextures[
                         (int)
-                        (m_EntityTextures.Length*m_AnimationTimerCurrentTime -
-                         m_AnimationTimerStart/m_AnimationTimerDuration)%m_EntityTextures.Length];
+                        (m_EntityTextures.Length*(m_AnimationTimerCurrentTime -
+                         m_AnimationTimerStart)/m_AnimationTimerDuration)%m_EntityTextures.Length];
             }
             else
             {
@@ -47,8 +47,8 @@ namespace Hitbox.Engine
                     m_EntityTextures[
                         Math.Min(
                             (int)
-                            (m_EntityTextures.Length*m_AnimationTimerCurrentTime -
-                             m_AnimationTimerStart/m_AnimationTimerDuration), m_EntityTextures.Length - 1)];
+                            (m_EntityTextures.Length*(m_AnimationTimerCurrentTime -
+                             m_AnimationTimerStart)/m_AnimationTimerDuration), m_EntityTextures.Length - 1)];
             }
         }
 
