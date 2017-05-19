@@ -35,6 +35,13 @@ namespace Hitbox.Engine
             set { m_End = value; }
         }
 
+        public LineSegment Set(Vector2 Begin, Vector2 End)
+        {
+            m_Start = Begin;
+            m_End = End;
+            return this;
+        }
+
 
 
         public bool CheckCrossing(LineSegment SegmentToCheck)

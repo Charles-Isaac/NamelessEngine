@@ -26,8 +26,8 @@ namespace Hitbox.Engine
         {
             
             int i = m_Hitbox.Length - 1;
-            
-            while (i >= 0 && !new LineSegment(m_Hitbox[i], ThisPosition).CheckCrossing(SegmentToCheck))
+            LineSegment toCheck = new LineSegment(new Vector2(), new Vector2());
+            while (i >= 0 && !toCheck.Set(m_Hitbox[i].Start + ThisPosition, m_Hitbox[i].End + ThisPosition).CheckCrossing(SegmentToCheck))
             {
                 i--;
             }
@@ -35,23 +35,16 @@ namespace Hitbox.Engine
         }
         public bool DetectCollisionHitboxHitbox(Hitbox HitboxToCheck, Vector2 HitboxToCheckPosition, Vector2 ThisPosition)
         {
-            throw new NotImplementedException();
-            /*
-            int i = m_Hitbox.Length - 1;
-            int j = HitboxToCheck.FullHitbox.Length - 1;
-            if (j >= 0)
+            bool ret = false;
+            LineSegment[] seg = HitboxToCheck.FullHitbox;
+            LineSegment toCheck = new LineSegment(new Vector2(), new Vector2());
+            int i = seg.Length - 1;
+            while (i >= 0 && !ret)
             {
-                while (i > 0 && !m_Hitbox[i].CheckCrossing(HitboxToCheck.FullHitbox[j]))
-                {
-                    j--;
-                    if (j < 0)
-                    {
-                        i--;
-                        j = HitboxToCheck.FullHitbox.Length - 1;
-                    }
-                }
+                ret = DetectCollisionSegmentHitbox(toCheck.Set(seg[i].Start + HitboxToCheckPosition, seg[i].End + HitboxToCheckPosition), ThisPosition);
+                i--;
             }
-            return i >= 0;*/
+            return ret;
         }
     }
 }

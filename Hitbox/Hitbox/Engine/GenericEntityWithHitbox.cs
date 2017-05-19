@@ -19,9 +19,24 @@ namespace Hitbox.Engine
             m_Hitbox = HB;
         }
 
+        public Hitbox Hitbox
+        {
+            get { return m_Hitbox; }
+        }
+
         public bool CheckIfHit(LineSegment SegmentToCheck)
         {
             return m_Hitbox.DetectCollisionSegmentHitbox(SegmentToCheck, Position);
+        }
+
+        public bool CheckIfHit(Hitbox HitboxToCheck, Vector2 HitboxPosition)
+        {
+            return m_Hitbox.DetectCollisionHitboxHitbox(HitboxToCheck, HitboxPosition, Position);
+        }
+
+        public bool CheckIfHit(GenericEntityWithHitbox Entity)
+        {
+            return CheckIfHit(Entity.Hitbox, Entity.Position);
         }
     }
 }

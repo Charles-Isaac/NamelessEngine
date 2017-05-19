@@ -32,3 +32,18 @@ C:\Users\Charles-Isaac\Documents\Visual Studio 2015\Projects\NamelessEngine\Hitb
 C:\Users\Charles-Isaac\Documents\Visual Studio 2015\Projects\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\NVorbis.dll
 C:\Users\Charles-Isaac\Documents\Visual Studio 2015\Projects\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\OpenTK.dll
 C:\Users\Charles-Isaac\Documents\Visual Studio 2015\Projects\NamelessEngine\Hitbox\Hitbox\obj\x86\Debug\Hitbox.csprojResolveAssemblyReference.cache
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\obj\x86\Debug\Hitbox.exe
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\obj\x86\Debug\Hitbox.pdb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier0.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier1.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier2.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier3.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier4.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier5.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier6.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Soldier7.xnb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\OpenTK.dll.config
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Hitbox.exe
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Hitbox.pdb
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\MonoGame.Framework.dll
+D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\obj\x86\Debug\Hitbox.csprojResolveAssemblyReference.cache

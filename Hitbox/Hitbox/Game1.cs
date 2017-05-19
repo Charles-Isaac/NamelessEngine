@@ -152,8 +152,9 @@ namespace Hitbox
                 SpriteEffects.None, 0f);
             spriteBatch.Draw(EntityB.CurrentTexture(), EntityB.Position,
                 new Rectangle(0, 0, (int) EntityB.Size.X, (int) EntityB.Size.Y),
-                EntityB.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : Color.White, 0, new Vector2(), 2,
+                EntityB.CheckIfHit(m_DemonstrationLineHitbox) ? Color.Red : (EntityB.CheckIfHit(EntityA) ? Color.Blue : Color.White), 0, new Vector2(), 2,
                 SpriteEffects.None, 0f);
+
             DrawLine(spriteBatch,m_DemonstrationLineHitbox,Color.Green,3);
             base.Draw(gameTime);
             spriteBatch.End();
