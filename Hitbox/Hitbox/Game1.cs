@@ -44,8 +44,8 @@ namespace Hitbox
                     new LineSegment(new Vector2(10, 32), new Vector2(54, 32))
                 });
             
-            EntityA = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 100), new Vector2(32,32), m_GenericHitbox,0,10000,false);
-            EntityB = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 300), new Vector2(32,32), m_GenericHitbox);
+            EntityA = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(300, 200), new Vector2(32,32), new Vector2(1000, 0), m_GenericHitbox,0,10000,false);
+            EntityB = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 300), new Vector2(32,32), new Vector2(0, 0), m_GenericHitbox);
         }
 
         /// <summary>
@@ -127,6 +127,11 @@ namespace Hitbox
             {
                 m_DemonstrationLineHitbox.Start += new Vector2(0.2f * gameTime.ElapsedGameTime.Milliseconds, 0);
             }
+
+
+            EntityA.Velocity = new Vector2((float)Math.Cos(gameTime.TotalGameTime.TotalMilliseconds / 400.0) * 481, (float)Math.Sin(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 200);
+            EntityB.Velocity = new Vector2((float)Math.Cos(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 100, (float)Math.Sin(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 100);
+
 
             m_DemonstrationLineHitbox = new LineSegment(m_DemonstrationLineHitbox.Start,
                 new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y));
