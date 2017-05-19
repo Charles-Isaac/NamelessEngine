@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitbox", "Hitbox\Hitbox.csproj", "{860BB5D3-A648-4773-9E4A-617BED6E12D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{860BB5D3-A648-4773-9E4A-617BED6E12D2}.Debug|x86.ActiveCfg = Debug|x86
+		{860BB5D3-A648-4773-9E4A-617BED6E12D2}.Debug|x86.Build.0 = Debug|x86
+		{860BB5D3-A648-4773-9E4A-617BED6E12D2}.Release|x86.ActiveCfg = Release|x86
+		{860BB5D3-A648-4773-9E4A-617BED6E12D2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = 218093ba-7f3b-4275-8653-0e78ddb43d73
+	EndGlobalSection
+EndGlobal

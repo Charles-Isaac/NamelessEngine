@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier0.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier1.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier2.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier3.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier4.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier5.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier6.png</File>
+    <File>C:/Users/Charles-Isaac/Documents/Visual Studio 2015/Projects/Hitbox/Hitbox/Content/Texture/Soldier7.png</File>
+  </SourceFiles>
+</SourceFileCollection>
