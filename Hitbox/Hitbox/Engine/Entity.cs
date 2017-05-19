@@ -11,6 +11,7 @@ namespace Hitbox.Engine
     class Entity
     {
         private Vector2 m_Position;
+        private Vector2 m_Velocity;
         private Vector2 m_Size;
         private bool m_Visible;
         private Texture2D[] m_EntityTextures;
@@ -19,7 +20,8 @@ namespace Hitbox.Engine
         private double m_AnimationTimerCurrentTime;
         private bool m_AnimationLoop;
 
-        public Entity(Texture2D[] EntityTextures, Vector2 StartPosition, Vector2 StartSize, double AnimationTimerStart = 0.0, 
+
+        public Entity(Texture2D[] EntityTextures, Vector2 StartPosition, Vector2 StartSize, Vector2 StartVelocity, double AnimationTimerStart = 0.0, 
             double AnimationTimerDuration = 1000.0/*millisecondes*/, bool AnimationLoop = true)
         {
             m_Size = StartSize;
@@ -29,6 +31,7 @@ namespace Hitbox.Engine
             m_AnimationTimerDuration = AnimationTimerDuration;
             m_AnimationTimerCurrentTime = AnimationTimerStart;
             m_AnimationLoop = AnimationLoop;
+            m_Velocity = StartVelocity;
         }
 
         public Texture2D CurrentTexture()
@@ -55,6 +58,7 @@ namespace Hitbox.Engine
         public virtual void Update(GameTime gametime)
         {
             m_AnimationTimerCurrentTime = gametime.TotalGameTime.TotalMilliseconds;
+            m_Position = m_Position + m_Velocity*gametime.ElapsedGameTime.Milliseconds/1000;
         }
 
         public Vector2 Position
@@ -85,6 +89,12 @@ namespace Hitbox.Engine
         {
             get { return m_Size; }
             set { m_Size = value; }
+        }
+
+        public Vector2 Velocity
+        {
+            get { return m_Velocity; }
+            set { m_Velocity = value; }
         }
     }
 }
