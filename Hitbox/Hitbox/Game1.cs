@@ -14,6 +14,7 @@ namespace Hitbox
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D[] m_GenericTextures;
+        private Texture2D[] m_ExplosionTextures;
         GenericEntityWithHitbox EntityA;
         GenericEntityWithHitbox EntityB;
         private Engine.Hitbox m_GenericHitbox;
@@ -27,8 +28,8 @@ namespace Hitbox
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             m_GenericTextures = new Texture2D[8];
-            
 
+            m_ExplosionTextures = new Texture2D[81];
 
 
 
@@ -41,11 +42,12 @@ namespace Hitbox
                 new Engine.Hitbox(new LineSegment[]
                 {
                     new LineSegment(new Vector2(32, -3), new Vector2(32, 64)),
-                    new LineSegment(new Vector2(10, 32), new Vector2(54, 32))
+                    new LineSegment(new Vector2(10, 32), new Vector2(54, 32)),
+                    new LineSegment(new Vector2(8, 0), new Vector2(56, 0))
                 });
             
-            EntityA = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(300, 200), new Vector2(32,32), new Vector2(1000, 0), m_GenericHitbox,0,10000,false);
-            EntityB = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 300), new Vector2(32,32), new Vector2(0, 0), m_GenericHitbox);
+            EntityA = new GenericEntityWithHitbox(m_GenericTextures,new Vector2(300, 200), new Vector2(100,100), new Vector2(1000, 0), m_GenericHitbox,0,2000,false);
+            EntityB = new GenericEntityWithHitbox(m_GenericTextures, new Vector2(100, 300), new Vector2(32,32), new Vector2(0, 0), m_GenericHitbox,0,3000,true);
         }
 
         /// <summary>
@@ -85,6 +87,25 @@ namespace Hitbox
             m_GenericTextures[5] = Content.Load<Texture2D>("Texture/Soldier5");
             m_GenericTextures[6] = Content.Load<Texture2D>("Texture/Soldier6");
             m_GenericTextures[7] = Content.Load<Texture2D>("Texture/Soldier7");
+            
+
+            Texture2D expl = Content.Load<Texture2D>("Texture/Explosion");
+
+
+            
+            for (int i = 0; i < 81; i++)
+            {
+                Texture2D originalTexture = Content.Load<Texture2D>("Texture/Explosion");
+                Rectangle sourceRectangle = new Rectangle(i%9*100, i/9*100, 100, 100);
+                
+                m_ExplosionTextures[i] = new Texture2D(GraphicsDevice, sourceRectangle.Width, sourceRectangle.Height);
+                Color[] data = new Color[sourceRectangle.Width * sourceRectangle.Height];
+                originalTexture.GetData(0, sourceRectangle, data, 0, data.Length);
+                m_ExplosionTextures[i].SetData(data);
+            }
+            
+
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -129,15 +150,22 @@ namespace Hitbox
             }
 
 
-            EntityA.Velocity = new Vector2((float)Math.Cos(gameTime.TotalGameTime.TotalMilliseconds / 400.0) * 481, (float)Math.Sin(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 200);
+            //EntityA.Velocity = new Vector2((float)Math.Cos(gameTime.TotalGameTime.TotalMilliseconds / 400.0) * 481, (float)Math.Sin(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 200);
             EntityB.Velocity = new Vector2((float)Math.Cos(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 100, (float)Math.Sin(gameTime.TotalGameTime.TotalMilliseconds / 500.0) * 100);
-
-
+            EntityA.Velocity = new Vector2(0,0);
+            EntityA.Position = new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y);
             m_DemonstrationLineHitbox = new LineSegment(m_DemonstrationLineHitbox.Start,
                 new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y));
             // TODO: Add your update logic here
             EntityA.Update(gameTime);
             EntityB.Update(gameTime);
+            if (gameTime.TotalGameTime.TotalMilliseconds > 2000 && gameTime.TotalGameTime.TotalMilliseconds < 2100)
+            {
+                EntityA.EntityTextures = m_ExplosionTextures;
+                EntityA.AnimationLoop = false;
+                EntityA.AnimationTimerStart = gameTime.TotalGameTime.TotalMilliseconds;
+                EntityA.AnimationTimerDuration = 500;
+            }
             base.Update(gameTime);
         }
 

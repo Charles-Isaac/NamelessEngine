@@ -47,3 +47,4 @@ D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\
 D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Hitbox.pdb
 D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\MonoGame.Framework.dll
 D:\Monogame\NamelessEngine\NamelessEngine\Hitbox\Hitbox\obj\x86\Debug\Hitbox.csprojResolveAssemblyReference.cache
+C:\Users\Charles-Isaac\Documents\Visual Studio 2015\Projects\NamelessEngine\Hitbox\Hitbox\bin\DesktopGL\x86\Debug\Content\Texture\Explosion.xnb

@@ -96,5 +96,17 @@ namespace Hitbox.Engine
             get { return m_Velocity; }
             set { m_Velocity = value; }
         }
+
+        public double AnimationTimerStart
+        {
+            get { return m_AnimationTimerStart; }
+            set { m_AnimationTimerStart = value; }
+        }
+
+        public double AnimationTimerDuration
+        {
+            get { return m_AnimationTimerDuration; }
+            set { m_AnimationTimerDuration = value; }
+        }
     }
 }
